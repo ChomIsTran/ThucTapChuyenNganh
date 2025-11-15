@@ -1,260 +1,209 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> MovieReview | Trang Chủ</title>
+    <meta charset="utf-8">
+    <title>HugMe - Bear Shop Website Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+    <base href="{{asset('public/')}}">
 
-    <!-- Font & Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Favicon -->
+    <link href="img/gau2.jpg" rel="icon">
 
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <style>
-        body {
-            background-color: #0a0a0f;
-            color: #eee;
-            font-family: 'Poppins', sans-serif;
-        }
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Oswald:wght@500;600;700&family=Pacifico&display=swap" rel="stylesheet"> 
 
-        /* === Navbar === */
-        .navbar {
-            background: linear-gradient(90deg, #081229, #0f2027);
-            padding: 1rem 2rem;
-        }
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
-        .navbar-brand {
-            font-weight: 700;
-            color: #00ffff !important;
-            font-size: 1.6rem;
-        }
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
-        .navbar-nav .nav-link {
-            color: #d1d1d1 !important;
-            margin-right: 20px;
-            transition: 0.3s;
-        }
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
-        .navbar-nav .nav-link:hover {
-            color: #00ffff !important;
-        }
-
-        /* === Hero Section === */
-        .hero {
-            background: url('img/banner-movie.jpg') center/cover no-repeat;
-            min-height: 70vh;
-            display: flex;
-            align-items: center;
-            text-align: center;
-            justify-content: center;
-            position: relative;
-        }
-
-        .hero::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.7);
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero-content h1 {
-            font-size: 3rem;
-            color: #00ffff;
-        }
-
-        .hero-content p {
-            color: #ccc;
-            font-size: 1.2rem;
-            margin-top: 10px;
-        }
-
-        .hero-content .btn {
-            margin-top: 25px;
-            padding: 10px 30px;
-            border-radius: 30px;
-            background: #00ffff;
-            color: #000;
-            font-weight: 600;
-            transition: 0.3s;
-        }
-
-        .hero-content .btn:hover {
-            background: #0fffb0;
-        }
-
-        /* === Section title === */
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .section-title h2 {
-            font-weight: 700;
-            color: #00ffff;
-        }
-
-        /* === Movie Cards === */
-        .movie-card {
-            background: #111827;
-            border-radius: 10px;
-            overflow: hidden;
-            transition: 0.4s ease;
-            position: relative;
-        }
-
-        .movie-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 0 25px rgba(0, 255, 255, 0.2);
-        }
-
-        .movie-card img {
-            width: 100%;
-            height: 350px;
-            object-fit: cover;
-        }
-
-        .movie-card .card-body {
-            padding: 20px;
-        }
-
-        .movie-card h5 {
-            color: #fff;
-            margin-bottom: 8px;
-        }
-
-        .movie-card p {
-            font-size: 0.9rem;
-            color: #aaa;
-        }
-
-        .rating i {
-            color: #ffcc00;
-        }
-
-        /* === Footer === */
-        footer {
-            background: #081229;
-            color: #bbb;
-            padding: 40px 0;
-            text-align: center;
-            font-size: 0.9rem;
-            margin-top: 50px;
-        }
-
-        footer a {
-            color: #00ffff;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        /* === Responsive === */
-        @media (max-width: 768px) {
-            .hero-content h1 {
-                font-size: 2.3rem;
-            }
-        }
-    </style>
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
 </head>
 
 <body>
+    <!-- Topbar Start -->
+    <div class="container-fluid px-0 d-none d-lg-block">
+        <div class="row gx-0">
+            <div class="col-lg-4 text-center bg-secondary py-3">
+                <div class="d-inline-flex align-items-center justify-content-center">
+                    <i class="bi bi-envelope fs-1 text-primary me-3"></i>
+                    <div class="text-start">
+                        <h6 class="text-uppercase mb-1">Email Us</h6>
+                        <span>info@example.com</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 text-center bg-primary border-inner py-3">
+                <div class="d-inline-flex align-items-center justify-content-center">
+                    <a href="index.html" class="navbar-brand">
+                        <h1 class="m-0 text-uppercase text-white"><i class="fa fa-birthday-cake fs-1 text-dark me-3"></i>HugMe</h1>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-4 text-center bg-secondary py-3">
+                <div class="d-inline-flex align-items-center justify-content-center">
+                    <i class="bi bi-phone-vibrate fs-1 text-primary me-3"></i>
+                    <div class="text-start">
+                        <h6 class="text-uppercase mb-1">Call Us</h6>
+                        <span>+012 345 6789</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#"><i class="fa-solid fa-clapperboard me-2"></i>MovieInLife</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="menu">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li><a class="nav-link active" href="#">Trang Chủ</a></li>
-                    <li><a class="nav-link" href="#">Review Phim</a></li>
-                    <li><a class="nav-link" href="#">Tin Tức</a></li>
-                    <li><a class="nav-link" href="#">Liên Hệ</a></li>
-                </ul>
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark shadow-sm py-3 py-lg-0 px-3 px-lg-0">
+        <a href="index.html" class="navbar-brand d-block d-lg-none">
+            <h1 class="m-0 text-uppercase text-white"><i class="fa fa-birthday-cake fs-1 text-primary me-3"></i>HugMe</h1>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto mx-lg-auto py-0">
+                <a href="{{route('home')}}" class="nav-item nav-link active">Home</a>
+                <a href="{{route('about')}}" class="nav-item nav-link">About Us</a>
+                <a href="{{route('menu')}}" class="nav-item nav-link">Menu & Pricing</a>
+                <a href="{{route('team')}}" class="nav-item nav-link">Master Chefs</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                    <div class="dropdown-menu m-0">
+                        <a href="{{route('service')}}" class="dropdown-item">Our Service</a>
+                        <a href="{{route('testimonial')}}" class="dropdown-item">Testimonial</a>
+                    </div>
+                </div>
+                <a href="{{route('contact')}}" class="nav-item nav-link">Contact Us</a>
             </div>
         </div>
     </nav>
+    <!-- Navbar End -->
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Khám Phá Thế Giới Điện Ảnh</h1>
-            <p>Review chuyên sâu - Cảm nhận chân thật - Cập nhật liên tục</p>
-            <a href="#" class="btn">Bắt Đầu Xem Review</a>
-        </div>
-    </section>
 
-    <!-- Phim nổi bật -->
-    <section class="container py-5">
-        <div class="section-title">
-            <h2>🔥 Phim Nổi Bật Trong Tuần</h2>
-            <p>Các bộ phim đang được quan tâm nhất hiện nay</p>
-        </div>
-        <div class="row g-4">
-            <div class="col-md-6 col-lg-3">
-                <div class="movie-card">
-                    <img src="img/bogia.png" alt="Bố Già">
-                    <div class="card-body">
-                        <h5>Bố Già</h5>
-                        <div class="rating mb-2"><i class="fa fa-star"></i> 9.2</div>
-                        <p>Phim Việt cảm động về tình cha con, đầy ý nghĩa và hài hước.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-3">
-                <div class="movie-card">
-                    <img src="img/mai.png" alt="Mai">
-                    <div class="card-body">
-                        <h5>Mai</h5>
-                        <div class="rating mb-2"><i class="fa fa-star"></i> 8.9</div>
-                        <p>Cuộc hành trình vượt qua tổn thương và tìm lại bản thân.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-3">
-                <div class="movie-card">
-                    <img src="img/lamgiauma.png" alt="Làm Giàu Với Ma">
-                    <div class="card-body">
-                        <h5>Làm Giàu Với Ma</h5>
-                        <div class="rating mb-2"><i class="fa fa-star"></i> 9.1</div>
-                        <p>Pha trộn giữa kinh dị và hài hước mang phong cách Việt Nam.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-3">
-                <div class="movie-card">
-                    <img src="img/lactroi.png" alt="Lạc Trôi">
-                    <div class="card-body">
-                        <h5>Lạc Trôi</h5>
-                        <div class="rating mb-2"><i class="fa fa-star"></i> 9.8</div>
-                        <p>Âm nhạc, hình ảnh và cảm xúc hòa quyện trong một tuyệt phẩm.</p>
+    <!-- Hero Start -->
+    <div class="container-fluid bg-primary py-5 mb-5 hero-header">
+        <div class="container py-5">
+            <div class="row justify-content-start">
+                <div class="col-lg-8 text-center text-lg-start">
+                    <h1 class="font-secondary text-primary mb-4">Super Crispy</h1>
+                    <h1 class="display-1 text-uppercase text-white mb-4">HugMe</h1>
+                    <h1 class="text-uppercase text-white">The Best Bear In London</h1>
+                    <div class="d-flex align-items-center justify-content-center justify-content-lg-start pt-5">
+                        <a href="" class="btn btn-primary border-inner py-3 px-5 me-5">Read More</a>
+                        <button type="button" class="btn-play" data-bs-toggle="modal"
+                            data-src="https://www.youtube.com/embed/DWRcNpR6Kdc" data-bs-target="#videoModal">
+                            <span></span>
+                        </button>
+                        <h5 class="font-weight-normal text-white m-0 ms-4 d-none d-sm-block">Play Video</h5>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+    <!-- Hero End -->
 
-    @yield('body')
 
-    <!-- Footer -->
-    <footer>
-        <p>© 2025 <a href="#">MovieReview</a>. Tất cả bản quyền được bảo lưu.</p>
-        <p><i class="fa fa-envelope me-2"></i>contact@moviereview.com</p>
-    </footer>
+@yield('body')
+    <!-- Footer Start -->
+    <div class="container-fluid bg-img text-secondary" style="margin-top: 90px">
+        <div class="container">
+            <div class="row gx-5">
+                <div class="col-lg-4 col-md-6 mb-lg-n5">
+                    <div class="d-flex flex-column align-items-center justify-content-center text-center h-100 bg-primary border-inner p-4">
+                        <a href="index.html" class="navbar-brand">
+                            <h1 class="m-0 text-uppercase text-white"><i class="fa fa-birthday-cake fs-1 text-dark me-3"></i>BearZone</h1>
+                        </a>
+                        <p class="mt-3">Lorem diam sit erat dolor elitr et, diam lorem justo labore amet clita labore stet eos magna sit. Elitr dolor eirmod duo tempor lorem, elitr clita ipsum sea. Nonumy rebum et takimata ea takimata amet gubergren, erat rebum magna lorem stet eos. Diam amet et kasd eos duo dolore no.</p>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-6">
+                    <div class="row gx-5">
+                        <div class="col-lg-4 col-md-12 pt-5 mb-5">
+                            <h4 class="text-primary text-uppercase mb-4">Get In Touch</h4>
+                            <div class="d-flex mb-2">
+                                <i class="bi bi-geo-alt text-primary me-2"></i>
+                                <p class="mb-0">123 Street, New York, USA</p>
+                            </div>
+                            <div class="d-flex mb-2">
+                                <i class="bi bi-envelope-open text-primary me-2"></i>
+                                <p class="mb-0">info@example.com</p>
+                            </div>
+                            <div class="d-flex mb-2">
+                                <i class="bi bi-telephone text-primary me-2"></i>
+                                <p class="mb-0">+012 345 67890</p>
+                            </div>
+                            <div class="d-flex mt-4">
+                                <a class="btn btn-lg btn-primary btn-lg-square border-inner rounded-0 me-2" href="#"><i class="fab fa-twitter fw-normal"></i></a>
+                                <a class="btn btn-lg btn-primary btn-lg-square border-inner rounded-0 me-2" href="#"><i class="fab fa-facebook-f fw-normal"></i></a>
+                                <a class="btn btn-lg btn-primary btn-lg-square border-inner rounded-0 me-2" href="#"><i class="fab fa-linkedin-in fw-normal"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
+                            <h4 class="text-primary text-uppercase mb-4">Quick Links</h4>
+                            <div class="d-flex flex-column justify-content-start">
+                                <a class="text-secondary mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Home</a>
+                                <a class="text-secondary mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>About Us</a>
+                                <a class="text-secondary mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Our Services</a>
+                                <a class="text-secondary mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Meet The Team</a>
+                                <a class="text-secondary mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Latest Blog</a>
+                                <a class="text-secondary" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Contact Us</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
+                            <h4 class="text-primary text-uppercase mb-4">Newsletter</h4>
+                            <p>Amet justo diam dolor rebum lorem sit stet sea justo kasd</p>
+                            <form action="">
+                                <div class="input-group">
+                                    <input type="text" class="form-control border-white p-3" placeholder="Your Email">
+                                    <button class="btn btn-primary">Sign Up</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid text-secondary py-4" style="background: #111111;">
+        <div class="container text-center">
+            <p class="mb-0">&copy; <a class="text-white border-bottom" href="#">Your Site Name</a>. All Rights Reserved. 
+			
+			<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+			Designed by <a class="text-white border-bottom" href="https://htmlcodex.com">HTML Codex</a></p>
+            <br>Distributed By: <a class="border-bottom" href="https://themewagon.com" target="_blank">ThemeWagon</a>
+        </div>
+    </div>
+    <!-- Footer End -->
 
-    <!-- Script -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-primary border-inner py-3 fs-4 back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
 </body>
+
 </html>

@@ -3,17 +3,17 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Hug Me</title>
+    <title>HugMe - Bear Shop Website Template</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
     <base href="<?php echo e(asset('public/')); ?>">
 
     <!-- Favicon -->
-    <link href="img/banner1.webp" rel="icon">
+    <link href="img/gau2.jpg" rel="icon">
+
 
     <!-- Google Web Fonts -->
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Oswald:wght@500;600;700&family=Pacifico&display=swap" rel="stylesheet"> 
@@ -79,7 +79,7 @@
                 <a href="<?php echo e(route('home')); ?>" class="nav-item nav-link active">Home</a>
                 <a href="<?php echo e(route('about')); ?>" class="nav-item nav-link">About Us</a>
                 <a href="<?php echo e(route('menu')); ?>" class="nav-item nav-link">Menu & Pricing</a>
-                <a href="<?php echo e(route('team')); ?>" class="nav-item nav-link">Master</a>
+                <a href="<?php echo e(route('team')); ?>" class="nav-item nav-link">Master Chefs</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                     <div class="dropdown-menu m-0">
@@ -99,9 +99,9 @@
         <div class="container py-5">
             <div class="row justify-content-start">
                 <div class="col-lg-8 text-center text-lg-start">
-                    <h1 class="font-secondary text-primary mb-4">Maison de Teddy</h1>
+                    <h1 class="font-secondary text-primary mb-4">Super Crispy</h1>
                     <h1 class="display-1 text-uppercase text-white mb-4">HugMe</h1>
-                    <h1 class="text-uppercase text-white">The Best Teddy Bear In VietNam</h1>
+                    <h1 class="text-uppercase text-white">The Best Bear In London</h1>
                     <div class="d-flex align-items-center justify-content-center justify-content-lg-start pt-5">
                         <a href="" class="btn btn-primary border-inner py-3 px-5 me-5">Read More</a>
                         <button type="button" class="btn-play" data-bs-toggle="modal"
@@ -116,6 +116,7 @@
     </div>
     <!-- Hero End -->
 
+
 <?php echo $__env->yieldContent('body'); ?>
     <!-- Footer Start -->
     <div class="container-fluid bg-img text-secondary" style="margin-top: 90px">
@@ -124,7 +125,7 @@
                 <div class="col-lg-4 col-md-6 mb-lg-n5">
                     <div class="d-flex flex-column align-items-center justify-content-center text-center h-100 bg-primary border-inner p-4">
                         <a href="index.html" class="navbar-brand">
-                            <h1 class="m-0 text-uppercase text-white"><i class="fa fa-birthday-cake fs-1 text-dark me-3"></i>HugMe</h1>
+                            <h1 class="m-0 text-uppercase text-white"><i class="fa fa-birthday-cake fs-1 text-dark me-3"></i>BearZone</h1>
                         </a>
                         <p class="mt-3">Lorem diam sit erat dolor elitr et, diam lorem justo labore amet clita labore stet eos magna sit. Elitr dolor eirmod duo tempor lorem, elitr clita ipsum sea. Nonumy rebum et takimata ea takimata amet gubergren, erat rebum magna lorem stet eos. Diam amet et kasd eos duo dolore no.</p>
                     </div>
