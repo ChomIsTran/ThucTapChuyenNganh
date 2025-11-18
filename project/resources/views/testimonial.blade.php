@@ -1,8 +1,5 @@
-@extends('layout')
+@extends('layout/home')
 @section('body')
-
-    
-
     <!-- Page Header Start -->
     <div class="container-fluid bg-dark bg-img p-5 mb-5">
         <div class="row">
@@ -73,8 +70,4 @@
         </div>
     </div>
     <!-- Testimonial End -->
-
-
-
-
-endsection
+@endsection

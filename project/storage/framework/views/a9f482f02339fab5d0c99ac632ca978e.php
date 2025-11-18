@@ -83,4 +83,4 @@
     <!-- Team End -->
 
 <?php $__env->stopSection(); ?>
-<?php echo $__env->make('layout', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH E:\Phanmemhoctap\ThucTapChuyenNganh\project\resources\views/team.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layout/home', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH E:\Phanmemhoctap\ThucTapChuyenNganh\project\resources\views/team.blade.php ENDPATH**/ ?>

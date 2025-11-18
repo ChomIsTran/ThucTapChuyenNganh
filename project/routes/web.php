@@ -20,6 +20,12 @@ Route::get('/service', function () {
 Route::get('/testimonial', function () {
     return view('testimonial');
 })->name('testimonial');
+Route::get('/contact', function () {
+    return view('contact');
+})->name('contact');
+Route::get('/about', function () {
+    return view('about');
+})->name('about');
 Route::get('/admin', function () {
     return view('admin');
 })->name('admin');
