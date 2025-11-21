@@ -74,7 +74,7 @@
               <a href="<?php echo e(route('product')); ?>">Product</a>
             </li>
             <li>
-              <a href="forgot-password.html">Forgot Password Page</a>
+              <a href="<?php echo e(route('mymy')); ?>">Mymy</a>
             </li>
             <li>
               <a href="blank.html">Blank Page</a>

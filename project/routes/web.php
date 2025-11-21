@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\admin\CategoryController;
 use App\Http\Controllers\admin\ProductController;
+use App\Http\Controllers\admin\MymyController;
 
 
 /*
@@ -14,7 +15,8 @@ use App\Http\Controllers\admin\ProductController;
 */
 
 // Trang chủ (home page)
-Route::view('/', 'layout.home')->name('index');
+Route::view('/', 'admin.index')->name('home');
+Route::view('/home', 'layout.home')->name('index');
 
 // Các trang tĩnh
 Route::view('/about', 'about')->name('about');
@@ -44,6 +46,8 @@ Route::middleware('auth')->group(function () {
 
     // Product
     Route::get('/admin/product', [ProductController::class, 'index'])->name('product');
+    //Mymy
+    Route::get('/admin/mymy', [MymyController::class, 'index'])->name('mymy');
 });
 
 // Trang sau khi login
