@@ -6,7 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\admin\CategoryController;
 use App\Http\Controllers\admin\ProductController;
 use App\Http\Controllers\admin\MymyController;
-
+use App\Http\Controllers\admin\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,29 +29,34 @@ Route::view('/contact', 'contact')->name('contact');
 // Login / Register / Logout
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);
-
 Route::get('/register', [AuthController::class, 'showRegisterForm'])->name('register');
 Route::post('/register', [AuthController::class, 'register']);
-
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
-// Admin
-Route::middleware('auth')->group(function () {
+// Admin giao diện chính
+Route::get('/admin', function () {
+    return view('admin');
+})->name('admin');
 
-    // Dashboard admin → resources/views/admin/index.blade.php
-    Route::view('/admin', 'admin')->name('admin');
+// Admin CRUD group
+Route::group(['prefix'=> 'admin','as'=> 'admin.'],function() {
 
-    // Category
-    Route::get('/admin/category', [CategoryController::class, 'index'])->name('category');
+    // Dashboard resource
+    Route::resource('dashboard', LoginController::class);
+
+    // Category CRUD
+    Route::resource('category', CategoryController::class);
 
     // Product
-    Route::get('/admin/product', [ProductController::class, 'index'])->name('product');
-    //Mymy
-    Route::get('/admin/mymy', [MymyController::class, 'index'])->name('mymy');
+    Route::get('/product', function () {
+        return view('admin.product.product-list');
+    })->name('product');
+
+    // Mymy
+    Route::get('/mymy', [MymyController::class, 'index'])->name('mymy');
 });
 
 // Trang sau khi login
 Route::get('/home', [HomeController::class, 'index'])
     ->middleware('auth')
     ->name('home');
-

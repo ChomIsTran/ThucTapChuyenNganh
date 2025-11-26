@@ -1,4 +1,4 @@
-@extends('layout/home')
+@extends('layout.admin')
 @section('body')
 
     <!-- Video Modal Start -->

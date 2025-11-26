@@ -3,7 +3,7 @@
 <div class ="card-footer small muted">
     <table class="table">
         <h1> Category</h1>
-        <a href ="" class="btn btn-primary"> add</a>
+        <a href ="{{route('admin.category.create')}}" class="btn btn-primary"> add</a>
   <thead>
     <tr>
       <th scope="col">#</th>
@@ -24,8 +24,13 @@
       <td>Otto</td>
       <td>@mdo</td>
       <td><a href =""><i class="fa-solid fa-eye text-info"></i></a></td>
-      <td><a href =""><i class="fa-solid fa-pen-to-square text-warming"></i></a></td>
-      <td><a href =""><i class="fa-solid fa-trash text-danger"></i></a></td>
+      <td><a href ="{{route('admin.category.edit',['category'=>$object->id])}}"><i class="fa-solid fa-pen-to-square text-warming"></i></a></td>
+      <td><a href="{{route('admin.category.destroy',['category'=>$object->id])}}" title="Delete {{$object->name}}" onclick="event.preventDefault();window.confirm('Bạn đã chắc chắn xóa '+ '{{$object->name}}' +' chưa?') ?document.getElementById('category-delete-{{ $object->id }}').submit() :0;" class="btn btn-danger"><i class="far fa-trash-alt"></i>
+          <form action="{{ route('admin.category.destroy', ['category' => $object->id]) }}" method="post" id="category-delete-{{ $object->id }}">
+         {{ csrf_field() }}
+          {{ method_field('delete') }}
+          </form>
+                    </a></td>
     </tr>
    @empty
    <h1> chua co du lieu</h1>

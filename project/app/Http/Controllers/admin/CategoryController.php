@@ -19,5 +19,43 @@ class CategoryController extends Controller
     $categories = Category::orderBy('id', 'desc')->get();
     return view('admin.category.category-list', compact('categories'));
 }
+    public function create () {
+        return view('admin.category.add');
+    }
+    public function store(Request $request){
 
+        $category = Category::create(
+            [
+                'name'=>$request->name,
+            ]
+            );
+        if($category)
+            return redirect()->route('admin.category.index');
+        else{
+            return back();
+        }
+    }
+    public function edit($id){
+        $category = Category::find($id);
+        return view('admin.category.edit',compact('category'));
+    }
+    public function update(Request $request,$id){
+        $category = Category::find($id);
+        $category->update([
+            'name'=>$request->name,
+        ]);
+        if($category)
+            return redirect()->route('admin.category.index');
+        else
+            return back();
+    }
+    public function destroy($id)
+    {
+        $category = Category::find($id);
+        $category->delete();
+        if($category)
+            return redirect()->route('admin.category.index');
+        else
+            return back();
+    }
 }
