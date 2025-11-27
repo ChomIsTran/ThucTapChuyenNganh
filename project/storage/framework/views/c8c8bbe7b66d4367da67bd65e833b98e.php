@@ -71,10 +71,10 @@
               <a href="<?php echo e(route('admin.category.index')); ?>">Category</a>
             </li>
             <li>
-              <a href="">Product</a>
+              <a href="<?php echo e(route('admin.product.index')); ?>">Product</a>
             </li>
             <li>
-              <a href="">Mymy</a>
+              <a href="">Forgot Password</a>
             </li>
             <li>
               <a href="blank.html">Blank Page</a>

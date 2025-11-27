@@ -5,7 +5,6 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\admin\CategoryController;
 use App\Http\Controllers\admin\ProductController;
-use App\Http\Controllers\admin\MymyController;
 use App\Http\Controllers\admin\LoginController;
 
 /*
@@ -14,9 +13,12 @@ use App\Http\Controllers\admin\LoginController;
 |--------------------------------------------------------------------------
 */
 
-// Trang chủ (home page)
-Route::view('/', 'admin.index')->name('home');
-Route::view('/home', 'layout.home')->name('index');
+// =========================
+// TRANG NGƯỜI DÙNG (CLIENT)
+// =========================
+
+// Trang chủ
+Route::view('/', 'layout.home')->name('home');
 
 // Các trang tĩnh
 Route::view('/about', 'about')->name('about');
@@ -26,37 +28,43 @@ Route::view('/service', 'service')->name('service');
 Route::view('/testimonial', 'testimonial')->name('testimonial');
 Route::view('/contact', 'contact')->name('contact');
 
-// Login / Register / Logout
+// Trang sau khi login (nếu bạn cần)
+Route::get('/home', [HomeController::class, 'index'])
+    ->middleware('auth')
+    ->name('user.home');
+
+// =========================
+// AUTH
+// =========================
+
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);
+
 Route::get('/register', [AuthController::class, 'showRegisterForm'])->name('register');
 Route::post('/register', [AuthController::class, 'register']);
+
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
-// Admin giao diện chính
+// =========================
+// ADMIN
+// =========================
+
+// Trang giao diện chính của admin
 Route::get('/admin', function () {
     return view('admin');
 })->name('admin');
 
-// Admin CRUD group
-Route::group(['prefix'=> 'admin','as'=> 'admin.'],function() {
+// Nhóm route /admin/*
+Route::group(['prefix'=> 'admin','as'=> 'admin.'], function() {
 
-    // Dashboard resource
+    // Dashboard
     Route::resource('dashboard', LoginController::class);
 
-    // Category CRUD
+    // Category
     Route::resource('category', CategoryController::class);
 
     // Product
-    Route::get('/product', function () {
-        return view('admin.product.product-list');
-    })->name('product');
+    Route::resource('product', ProductController::class);
 
-    // Mymy
-    Route::get('/mymy', [MymyController::class, 'index'])->name('mymy');
+    
 });
-
-// Trang sau khi login
-Route::get('/home', [HomeController::class, 'index'])
-    ->middleware('auth')
-    ->name('home');
