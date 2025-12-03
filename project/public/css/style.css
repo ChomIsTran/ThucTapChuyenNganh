@@ -313,3 +313,64 @@ h6,
     background: linear-gradient(rgba(43, 40, 37, .5), rgba(43, 40, 37, .5)), url(../img/bg.jpg) center center no-repeat;
     background-size: cover;
 }
+
+/* ================================
+   ALL CATEGORIES (SIDEBAR DROPDOWN)
+   ================================ */
+.categories-bars {
+    padding: 0;
+    margin: 0;
+}
+
+.categories-bars li {
+    list-style: none;
+}
+
+.categories-bars-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15px;
+    border-bottom: 1px solid #f1f1f1;
+    background: #fff;
+    transition: 0.3s;
+}
+
+.categories-bars-item a {
+    text-decoration: none;
+    color: var(--dark);
+    font-weight: 500;
+}
+
+.categories-bars-item span {
+    color: #999;
+    font-size: 14px;
+}
+
+.categories-bars-item:hover {
+    background: var(--primary);
+}
+
+.categories-bars-item:hover a,
+.categories-bars-item:hover span {
+    color: #fff;
+}
+
+/* Nút ALL CATEGORIES (sidebar button) */
+.navbar-light .navbar-toggler h4 {
+    color: #fff;
+    font-weight: 600;
+    margin: 0;
+}
+
+.navbar-light .navbar-toggler {
+    background: var(--primary);
+    padding: 12px;
+    border-radius: 3px;
+}
+
+#allCat {
+    background: #fff;
+    border-left: 2px solid var(--primary);
+    border-right: 2px solid var(--primary);
+    border-bottom: 2px solid var(--primary);
+}

@@ -18,8 +18,9 @@ use App\Http\Controllers\admin\LoginController;
 // =========================
 
 // Trang chủ
-Route::view('/', 'layout.home')->name('home');
 
+Route::get('/', [App\Http\Controllers\HomeController::class,'index'])->name ('home');
+   
 // Các trang tĩnh
 Route::view('/about', 'about')->name('about');
 Route::view('/menu', 'menu')->name('menu');

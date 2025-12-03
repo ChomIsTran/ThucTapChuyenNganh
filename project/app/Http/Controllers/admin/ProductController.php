@@ -15,11 +15,12 @@ class ProductController extends Controller
         view()->share(['products' => $products]);
     }
 
-    public function index()
-    {
-        $products = Product::orderBy('id', 'desc')->get();
-        return view('admin.product.product-list', compact('products'));
-    }
+   public function index()
+{
+    $products = Product::all();
+    return view('admin.product.product-list', compact('products'));
+}
+
     public function create () {
         return view('admin.product.add');
     }

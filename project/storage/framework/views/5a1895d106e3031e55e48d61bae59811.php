@@ -33,6 +33,7 @@
 </head>
 
 <body>
+    
     <!-- Topbar Start -->
     <div class="container-fluid px-0 d-none d-lg-block">
         <div class="row gx-0">
@@ -75,7 +76,35 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
+            <!-- CATEGORY BÊN TRÁI -->
+<div class="navbar-nav me-4">
+    <div class="nav-item dropdown">
+        <a href="#" class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown">
+            <i class="fas fa-bars me-2"></i> All Category
+        </a>
+
+        <div class="dropdown-menu m-0 p-0">
+            <ul class="list-unstyled categories-bars">
+                <?php $__empty_1 = true; $__currentLoopData = $categories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $object): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
+                <li>
+                    <div class="category-bars-item">
+                        <a href="#"><?php echo e($object->name); ?></a>
+                        <span>(3)</span>
+                    </div>
+                </li>
+                               
+
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
+                not data here
+                <?php endif; ?>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- HẾT CATEGORY -->
+
             <div class="navbar-nav ms-auto mx-lg-auto py-0">
+                
                 <a href="<?php echo e(route('home')); ?>" class="nav-item nav-link active">Home</a>
                 <a href="<?php echo e(route('about')); ?>" class="nav-item nav-link">About Us</a>
                 <a href="<?php echo e(route('menu')); ?>" class="nav-item nav-link">Menu & Pricing</a>
@@ -89,6 +118,7 @@
                 </div>
                 <a href="<?php echo e(route('contact')); ?>" class="nav-item nav-link">Contact Us</a>
             </div>
+            
         </div>
     </nav>
     <!-- Navbar End -->
