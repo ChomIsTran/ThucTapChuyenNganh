@@ -82,7 +82,6 @@
         <a href="#" class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown">
             <i class="fas fa-bars me-2"></i> All Category
         </a>
-
         <div class="dropdown-menu m-0 p-0">
             <ul class="list-unstyled categories-bars">
                 @forelse($categories as $object)
@@ -92,8 +91,6 @@
                         <span>(3)</span>
                     </div>
                 </li>
-                               
-
                 @empty
                 not data here
                 @endforelse

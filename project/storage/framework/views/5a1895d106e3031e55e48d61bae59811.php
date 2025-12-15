@@ -82,7 +82,6 @@
         <a href="#" class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown">
             <i class="fas fa-bars me-2"></i> All Category
         </a>
-
         <div class="dropdown-menu m-0 p-0">
             <ul class="list-unstyled categories-bars">
                 <?php $__empty_1 = true; $__currentLoopData = $categories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $object): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
@@ -92,8 +91,6 @@
                         <span>(3)</span>
                     </div>
                 </li>
-                               
-
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
                 not data here
                 <?php endif; ?>

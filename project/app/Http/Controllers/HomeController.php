@@ -19,7 +19,7 @@ class HomeController extends Controller
     {
         $categories =Category::where('status','1')->get();
         $products =Product::where('status','1')->get();
-        return view('layout.home',compact('categories','products'));
+        return view('admin.index',compact('categories','products'));
         
     }
 
